@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="login.js">
+</head>
+<body>
+  
+    <br>
+<form action="">
+    <h1 style="color:rgb(65, 125, 204); text-align: center;">SIGN IN</h1>
+    <br>
+Email:<input type="text" placeholder="Email" id="Email" style="font-family:'Times New Roman', Times, serif; text-align: center;width: 370px;" value="Tung123@gmail.com">
+<br>
+<br>
+Password: 
+<br>
+<input type="password" placeholder="Password" id="Password" style="width:370px;text-align: center   ; font-family: 'Times New Roman', Times, serif;" value="Password">
+<br>
+<br>
+ShowPassword<input type="checkbox" onclick="checkbox()">
+<br>
+<a href="" style="text-decoration:none; color:rgb(6, 44, 125); ">Forgot Password</a>
+<br>
+<div class="button" style="text-align:center;">
+    <button style="  border-radius: 5px;width: 100px;border: none;background-color: rgb(65, 125, 204); " onclick="login()">
+    <a style="text-decoration:none ; color: white;">Sign in</a>    
+    </button>
+</div>
+<script>
+
+    function checkbox() {
+  var x = document.getElementById("Password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+function login(){
+   
+function storage(){
+    localStorage.setItem("useremail1","Tung123@gmail.com").value;
+localStorage.setItem("useremail2","Nguyen123@gmail.com").value;
+localStorage.setItem("userpassword1","12345").value;
+localStorage.setItem("userpassword2","54321").value;
+}
+function check(){
+    var storedemail = localStorage.getItem('useremail1');
+    var storedemail = localStorage.getItem('useremail2');
+    var storedpassword = localStorage.getItem('userpassword1');
+    var storedpassword = localStorage.getItem('userpassword2');
+    var useremail = document.getElementById('Email');
+    var userpassword = document.getElementById('Password');
+    if (useremail.value == storedemail && userpassword.value == storedpassword){
+        location.replace("https://www.youtube.com/");
+    } else 
+    {
+        alert('ERROR');
+    }
+}
+}
+
+</script>
+</form>
+</body>
+</html>
